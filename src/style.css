@@ -42,9 +42,10 @@ ul {
   max-width: 500px;
   margin: 50px auto;
   padding: 20px;
-  border: 2px solid #d8dcff;
-  border-radius: 5px;
+  border: 1px solid #9198e5;
+  border-radius: 10px;
   background: radial-gradient(#f4d6de, #9198e5);
+  box-shadow: 7px 6px 20px rgba(0, 0, 0, 0.2);
 }
 .bottom li {
   display: inline;
