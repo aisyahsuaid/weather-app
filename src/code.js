@@ -44,9 +44,10 @@ function displayTemp(response) {
   let topWind = document.querySelector("#wind");
   let topDate = document.querySelector("#date");
 
+  topCelsius = response.data.temperature.current;
+
   console.log(response.data.condition.icon);
-  topTemperature.innerHTML =
-    Math.round(response.data.temperature.current) + "°C";
+  topTemperature.innerHTML = Math.round(topCelsius);
   topCity.innerHTML = response.data.city;
   topDescription.innerHTML = response.data.condition.description;
   topHumidity.innerHTML = response.data.temperature.humidity + "%";
@@ -159,3 +160,24 @@ function displayTemp(response) {
     topIcon.setAttribute("src", "https://img.icons8.com/dusk/64/null/wind.png");
   }
 }
+function convertFahrenheit(event) {
+  event.preventDefault();
+  let fahrenheitTemp = (topCelsius * 9) / 5 + 32;
+  let calculatedTemp = document.querySelector("#mainTemp");
+  calculatedTemp.innerHTML = Math.round(fahrenheitTemp);
+}
+
+function convertCelsius(event) {
+  event.preventDefault();
+  let calculatedTemp = document.querySelector("#mainTemp");
+  calculatedTemp.innerHTML = Math.round(topCelsius);
+}
+let topCelsius = null;
+
+let topFahrenheit = document.querySelector("#fahrenheit");
+topFahrenheit.addEventListener("click", convertFahrenheit);
+
+let celsiusUnit = document.querySelector("#celsius");
+celsiusUnit.addEventListener("click", convertCelsius);
+
+search("London");
