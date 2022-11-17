@@ -162,6 +162,8 @@ function displayTemp(response) {
 }
 function convertFahrenheit(event) {
   event.preventDefault();
+  celsiusUnit.classList.remove("active");
+  topFahrenheit.classList.add("active");
   let fahrenheitTemp = (topCelsius * 9) / 5 + 32;
   let calculatedTemp = document.querySelector("#mainTemp");
   calculatedTemp.innerHTML = Math.round(fahrenheitTemp);
@@ -169,6 +171,8 @@ function convertFahrenheit(event) {
 
 function convertCelsius(event) {
   event.preventDefault();
+  celsiusUnit.classList.add("active");
+  topFahrenheit.classList.remove("active");
   let calculatedTemp = document.querySelector("#mainTemp");
   calculatedTemp.innerHTML = Math.round(topCelsius);
 }

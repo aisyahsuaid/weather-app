@@ -33,6 +33,14 @@ ul {
   margin: 0 50px;
   position: relative;
 }
+.active {
+  color: black;
+
+  cursor: default;
+}
+.active:hover {
+  color: blueviolet;
+}
 #humidity {
   right: 30px;
 }
@@ -58,4 +66,10 @@ ul {
   position: relative;
   font-size: 16px;
   top: -30px;
+}
+#celsius {
+  text-decoration: none;
+}
+#fahrenheit {
+  text-decoration: none;
 }
