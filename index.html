@@ -23,10 +23,12 @@
       <div class="weather-whole">
         <div class="weather-top">
           <h1>Location</h1>
+
           <ul class="top">
             <li id="date">Date 00:00</li>
             <li>Description</li>
           </ul>
+
           <div class="temp">
             <img
               src="https://img.icons8.com/dusk/64/null/sun--v1.png"
@@ -36,19 +38,41 @@
             <span id="topTemp"> <strong id="mainTemp">21°</strong></span>
             / 17°
           </div>
-
-          <ul class="bottom">
-            <li id="humidity">Humidity: 0%</li>
-            <li>Wind: 0 km/h</li>
-          </ul>
+          <div class="row">
+            <div class="col-6">
+              <ul>
+                <li>
+                  <img
+                    src="https://img.icons8.com/dusk/64/null/water.png"
+                    width="40px"
+                  />
+                </li>
+                <li>0%</li>
+                <li>Humidity</li>
+              </ul>
+            </div>
+            <div class="col-6">
+              <ul>
+                <li>
+                  <img
+                    src="https://img.icons8.com/dusk/64/null/windsock.png"
+                    width="40px"
+                  />
+                </li>
+                <li>2mph</li>
+                <li>Wind Speed</li>
+              </ul>
+            </div>
+          </div>
         </div>
-      </div>
-      <small>
-        <a href="https://github.com/aisyahsuaid/weather-app" target="_blank"
-          >Open-source code</a
+
+        <small>
+          <a href="https://github.com/aisyahsuaid/weather-app" target="_blank"
+            >Open-source code</a
+          >
+          by Aisyah Suaid</small
         >
-        by Aisyah Suaid</small
-      >
+      </div>
     </div>
     <script src="src/code.js"></script>
   </body>
