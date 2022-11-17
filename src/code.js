@@ -1,6 +1,16 @@
-let apiKey = "aa4a09ddd8573d457f45bcat04cfo0ab";
-let city = "London";
-let url = `https://api.shecodes.io/weather/v1/current?query=${city}&key=${apiKey}&units=metric`;
+let form = document.querySelector("#search-form");
+form.addEventListener("submit", submitValue);
+
+function search(city) {
+  let apiKey = "aa4a09ddd8573d457f45bcat04cfo0ab";
+  let url = `https://api.shecodes.io/weather/v1/current?query=${city}&key=${apiKey}&units=metric`;
+  axios.get(url).then(displayTemp);
+}
+function submitValue(event) {
+  event.preventDefault();
+  let cityInput = document.querySelector("#city-input");
+  search(cityInput.value);
+}
 
 function currentDate(timestamp) {
   let date = new Date(timestamp);
@@ -149,5 +159,3 @@ function displayTemp(response) {
     topIcon.setAttribute("src", "https://img.icons8.com/dusk/64/null/wind.png");
   }
 }
-
-axios.get(url).then(displayTemp);
