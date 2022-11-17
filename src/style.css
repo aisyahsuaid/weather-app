@@ -30,6 +30,11 @@ ul {
   /* position: relative;
   bottom: 30px;*/
 }
+.weather-whole-border {
+  border: 2px solid black;
+  max-width: 700px;
+  margin: 50px auto;
+}
 .weather-top {
   max-width: 500px;
   margin: 50px auto;
