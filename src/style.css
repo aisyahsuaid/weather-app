@@ -5,3 +5,9 @@
   border: 2px solid #d8dcff;
   border-radius: 5px;
 }
+
+h1 {
+  text-align: center;
+  position: relative;
+  bottom: 25px;
+}
