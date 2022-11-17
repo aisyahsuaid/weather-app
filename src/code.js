@@ -1,5 +1,5 @@
 let apiKey = "aa4a09ddd8573d457f45bcat04cfo0ab";
-let city = "Lisbon";
+let city = "London";
 let url = `https://api.shecodes.io/weather/v1/current?query=${city}&key=${apiKey}&units=metric`;
 
 function currentDate(timestamp) {
