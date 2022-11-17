@@ -1,4 +1,10 @@
-.weather-whole {
+h1 {
+  text-align: center;
+  position: relative;
+  bottom: 25px;
+}
+
+.weather-top {
   max-width: 600px;
   margin: 50px auto;
   padding: 30px;
@@ -6,8 +12,20 @@
   border-radius: 5px;
 }
 
-h1 {
+ul {
+  list-style: none;
   text-align: center;
+  padding: 0;
+}
+.top li {
+  display: inline;
+  margin: 0 50px;
   position: relative;
-  bottom: 25px;
+  bottom: 35px;
+}
+#date {
+  right: 30px;
+}
+.temp {
+  text-align: center;
 }
