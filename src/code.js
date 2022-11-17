@@ -36,7 +36,6 @@ function currentDate(timestamp) {
 }
 
 function displayTemp(response) {
-  console.log(response.data);
   let topTemperature = document.querySelector("#mainTemp");
   let topCity = document.querySelector("h1");
   let topDescription = document.querySelector("#description");
@@ -46,7 +45,6 @@ function displayTemp(response) {
 
   topCelsius = response.data.temperature.current;
 
-  console.log(response.data.condition.icon);
   topTemperature.innerHTML = Math.round(topCelsius);
   topCity.innerHTML = response.data.city;
   topDescription.innerHTML = response.data.condition.description;
@@ -176,6 +174,7 @@ function convertCelsius(event) {
   let calculatedTemp = document.querySelector("#mainTemp");
   calculatedTemp.innerHTML = Math.round(topCelsius);
 }
+
 let topCelsius = null;
 
 let topFahrenheit = document.querySelector("#fahrenheit");
@@ -184,4 +183,33 @@ topFahrenheit.addEventListener("click", convertFahrenheit);
 let celsiusUnit = document.querySelector("#celsius");
 celsiusUnit.addEventListener("click", convertCelsius);
 
+function displayForecast() {
+  let forecastElement = document.querySelector("#forecast");
+  let days = ["Fri", "Sat", "Sun", "Mon", "Tue"];
+
+  let forecastHTML = `<div class="row">`;
+  days.forEach(function (day) {
+    forecastHTML =
+      forecastHTML +
+      `
+      <div class="col-2">
+        <div class="weather-forecast-date">${day}</div>
+        <img
+          src="https://img.icons8.com/dusk/64/null/windsock.png"
+          alt=""
+          width="42"
+        />
+        <div class="weather-forecast-temperatures">
+          <span class="weather-forecast-temperature-max"> 18° </span>
+          <span class="weather-forecast-temperature-min"> 12° </span>
+        </div>
+      </div>
+  `;
+  });
+
+  forecastHTML = forecastHTML + `</div>`;
+  forecastElement.innerHTML = forecastHTML;
+}
+
 search("London");
+displayForecast();

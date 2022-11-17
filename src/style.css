@@ -68,6 +68,11 @@ ul {
 .weather-forecast {
   margin-top: 20px;
   text-align: center;
+  padding: 20px;
+}
+.weather-margin {
+  max-width: 550px;
+  margin: 50px auto;
 }
 #date {
   right: 30px;

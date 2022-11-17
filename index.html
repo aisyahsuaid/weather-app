@@ -28,82 +28,74 @@
   <body>
     <div class="container">
       <div class="weather-whole-border">
-        <div class="weather-top">
-          <h1></h1>
+        <div class="weather-margin">
+          <div class="weather-top">
+            <h1></h1>
 
-          <ul class="top">
-            <li id="date"></li>
-            <li id="description"></li>
-          </ul>
+            <ul class="top">
+              <li id="date"></li>
+              <li id="description"></li>
+            </ul>
 
-          <div class="temp">
-            <img src="#" alt="clear-sky-day" id="mainIcon" />
-            <span id="topTemp"> <strong id="mainTemp"></strong></span>
-            <span id="units"
-              ><a href="#" id="celsius" class="active">°C</a> /
-              <a href="#" id="fahrenheit">°F</a></span
+            <div class="temp">
+              <img src="#" alt="clear-sky-day" id="mainIcon" />
+              <span id="topTemp"> <strong id="mainTemp"></strong></span>
+              <span id="units"
+                ><a href="#" id="celsius" class="active">°C</a> /
+                <a href="#" id="fahrenheit">°F</a></span
+              >
+            </div>
+            <div class="row hum-wind">
+              <div class="col-6 droplet">
+                <ul class="ul-bottom">
+                  <li>
+                    <img
+                      src="https://img.icons8.com/dusk/64/null/water.png"
+                      width="40px"
+                    />
+                  </li>
+                  <li id="humidity"></li>
+                  <li>Humidity</li>
+                </ul>
+              </div>
+              <div class="col-6">
+                <ul class="ul-bottom">
+                  <li>
+                    <img
+                      src="https://img.icons8.com/dusk/64/null/windsock.png"
+                      width="40px"
+                    />
+                  </li>
+                  <li id="wind"></li>
+                  <li>Wind Speed</li>
+                </ul>
+              </div>
+            </div>
+          </div>
+          <form id="search-form">
+            <div class="row">
+              <div class="col-9">
+                <input
+                  type="search"
+                  placeholder="Please enter a city"
+                  class="form-control"
+                  id="city-input"
+                  autocomplete="off"
+                />
+              </div>
+              <div class="col-3">
+                <input type="submit" value="Search" />
+              </div>
+            </div>
+          </form>
+          <div class="weather-forecast" id="forecast"></div>
+          <small>
+            <a href="https://github.com/aisyahsuaid/weather-app" target="_blank"
+              >Open-source code</a
             >
-          </div>
-          <div class="row hum-wind">
-            <div class="col-6 droplet">
-              <ul class="ul-bottom">
-                <li>
-                  <img
-                    src="https://img.icons8.com/dusk/64/null/water.png"
-                    width="40px"
-                  />
-                </li>
-                <li id="humidity"></li>
-                <li>Humidity</li>
-              </ul>
-            </div>
-            <div class="col-6">
-              <ul class="ul-bottom">
-                <li>
-                  <img
-                    src="https://img.icons8.com/dusk/64/null/windsock.png"
-                    width="40px"
-                  />
-                </li>
-                <li id="wind"></li>
-                <li>Wind Speed</li>
-              </ul>
-            </div>
-          </div>
-        </div>
-        <form id="search-form">
-          <div class="row">
-            <div class="col-9">
-              <input
-                type="search"
-                placeholder="Please enter a city"
-                class="form-control"
-                id="city-input"
-                autocomplete="off"
-              />
-            </div>
-            <div class="col-3">
-              <input type="submit" value="Search" />
-            </div>
-          </div>
-        </form>
-        <div class="weather-forecast">
-          <div class="col-2">
-            <div class="weather-date">Thu</div>
-
-            <img
-              src="https://img.icons8.com/dusk/64/null/windsock.png"
-              width="30px"
-            />
-            <div class="weather-forecast-temp">10°/8°</div>
-          </div>
-        </div>
-        <small>
-          <a href="https://github.com/aisyahsuaid/weather-app" target="_blank"
-            >Open-source code</a
+            by Aisyah Suaid</small
           >
-          by Aisyah Suaid</small
-        >
+        </div>
       </div>
     </div>
     <script src="src/code.js"></script>
