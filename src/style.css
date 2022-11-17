@@ -1,7 +1,8 @@
 h1 {
   text-align: center;
-  position: relative;
-  bottom: 25px;
+
+  /*position: relative;
+  bottom: 25px;*/
 }
 
 ul {
@@ -9,28 +10,36 @@ ul {
   text-align: center;
   padding: 0;
 }
-
+.top {
+  padding: 0;
+  margin-top: 16px;
+}
+.ul-bottom {
+  padding: 0;
+  margin: 0;
+}
 .top li {
   display: inline;
   margin: 0 50px;
-  position: relative;
-  bottom: 30px;
+  padding: 0;
+  /* position: relative;
+  bottom: 30px;*/
 }
 .temp {
   text-align: center;
-  position: relative;
-  bottom: 30px;
+  /* position: relative;
+  bottom: 30px;*/
 }
 .weather-top {
-  max-width: 600px;
+  max-width: 500px;
   margin: 50px auto;
-  padding: 30px;
+  padding: 20px;
   border: 2px solid #d8dcff;
   border-radius: 5px;
 }
 .bottom li {
   display: inline;
-  margin: 0 50px;
+  margin: 0 20px;
   position: relative;
 }
 .active {
@@ -41,8 +50,8 @@ ul {
 .active:hover {
   color: blueviolet;
 }
-#humidity {
-  right: 30px;
+.hum-wind {
+  padding: 16px;
 }
 #date {
   right: 30px;
