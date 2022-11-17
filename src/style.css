@@ -4,14 +4,6 @@ h1 {
   bottom: 25px;
 }
 
-.weather-top {
-  max-width: 600px;
-  margin: 50px auto;
-  padding: 30px;
-  border: 2px solid #d8dcff;
-  border-radius: 5px;
-}
-
 ul {
   list-style: none;
   text-align: center;
@@ -21,11 +13,40 @@ ul {
   display: inline;
   margin: 0 50px;
   position: relative;
-  bottom: 35px;
+  bottom: 30px;
+}
+.temp {
+  text-align: center;
+  position: relative;
+  bottom: 30px;
+}
+.weather-top {
+  max-width: 600px;
+  margin: 50px auto;
+  padding: 30px;
+  border: 2px solid #d8dcff;
+  border-radius: 5px;
+}
+.bottom li {
+  display: inline;
+  margin: 0 50px;
+  position: relative;
+}
+#humidity {
+  right: 30px;
 }
 #date {
   right: 30px;
 }
-.temp {
-  text-align: center;
+
+#mainIcon {
+  width: 100px;
+}
+#mainTemp {
+  font-size: 60px;
+}
+#topTemp {
+  position: relative;
+  top: 3px;
+  left: 3px;
 }
