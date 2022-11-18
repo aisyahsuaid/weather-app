@@ -10,8 +10,13 @@ function submitValue(event) {
   event.preventDefault();
   let cityInput = document.querySelector("#city-input");
   search(cityInput.value);
+  getForecast(cityInput.value);
 }
-
+function getForecast(city) {
+  let apiKey = "aa4a09ddd8573d457f45bcat04cfo0ab";
+  let apiUrl = `https://api.shecodes.io/weather/v1/forecast?query=${city}&key=${apiKey}&units=metric`;
+  axios.get(apiUrl).then(displayForecast);
+}
 function currentDate(timestamp) {
   let date = new Date(timestamp);
   let hour = date.getHours();
@@ -183,7 +188,8 @@ topFahrenheit.addEventListener("click", convertFahrenheit);
 let celsiusUnit = document.querySelector("#celsius");
 celsiusUnit.addEventListener("click", convertCelsius);
 
-function displayForecast() {
+function displayForecast(response) {
+  console.log(response.data.daily);
   let forecastElement = document.querySelector("#forecast");
   let days = ["Fri", "Sat", "Sun", "Mon", "Tue"];
 
@@ -212,4 +218,3 @@ function displayForecast() {
 }
 
 search("London");
-displayForecast();
