@@ -12,11 +12,7 @@ function submitValue(event) {
   search(cityInput.value);
   getForecast(cityInput.value);
 }
-function getForecast(city) {
-  let apiKey = "aa4a09ddd8573d457f45bcat04cfo0ab";
-  let apiUrl = `https://api.shecodes.io/weather/v1/forecast?query=${city}&key=${apiKey}&units=metric`;
-  axios.get(apiUrl).then(displayForecast);
-}
+
 function currentDate(timestamp) {
   let date = new Date(timestamp);
   let hour = date.getHours();
@@ -39,7 +35,62 @@ function currentDate(timestamp) {
   let day = days[date.getDay()];
   return `${day} ${hour}:${minutes}`;
 }
-
+function icons(description) {
+  if (description == "clear-sky-day") {
+    return "https://img.icons8.com/dusk/64/null/sun--v1.png";
+  }
+  if (description == "clear-sky-night") {
+    return "https://img.icons8.com/dusk/64/null/bright-moon.png";
+  }
+  if (description == "few-clouds-day") {
+    return "https://img.icons8.com/dusk/64/null/partly-cloudy-day--v1.png";
+  }
+  if (description == "few-clouds-night") {
+    return "https://img.icons8.com/dusk/64/null/partly-cloudy-night--v1.png";
+  }
+  if (description == "scattered-clouds-day") {
+    return "https://img.icons8.com/dusk/64/null/cloud.png";
+  }
+  if (description == "scattered-clouds-night") {
+    return "https://img.icons8.com/dusk/64/null/cloud.png";
+  }
+  if (description == "broken-clouds-day") {
+    return "https://img.icons8.com/dusk/64/null/skydrive.png";
+  }
+  if (description == "broken-clouds-night") {
+    return "https://img.icons8.com/dusk/64/null/skydrive.png";
+  }
+  if (description == "shower-rain-day") {
+    return "https://img.icons8.com/dusk/64/null/rain--v1.png";
+  }
+  if (description == "shower-rain-night") {
+    return "https://img.icons8.com/dusk/64/null/keep-dry.png";
+  }
+  if (description == "rain-day") {
+    return "https://img.icons8.com/dusk/64/null/rain--v1.png";
+  }
+  if (description == "rain-night") {
+    return "https://img.icons8.com/dusk/64/null/rainy-night.png";
+  }
+  if (description == "thunderstorm-day") {
+    return "https://img.icons8.com/dusk/64/null/storm--v1.png";
+  }
+  if (description == "thunderstorm-night") {
+    return "https://img.icons8.com/dusk/64/null/storm--v1.png";
+  }
+  if (description == "snow-day") {
+    return "https://img.icons8.com/dusk/64/null/snow-storm.png";
+  }
+  if (description == "snow-night") {
+    return "https://img.icons8.com/dusk/64/null/snow-storm.png";
+  }
+  if (description == "mist-day") {
+    return "https://img.icons8.com/dusk/64/null/wind.png";
+  }
+  if (description == "mist-day") {
+    return "https://img.icons8.com/dusk/64/null/wind.png";
+  }
+}
 function displayTemp(response) {
   let topTemperature = document.querySelector("#mainTemp");
   let topCity = document.querySelector("h1");
@@ -59,109 +110,7 @@ function displayTemp(response) {
 
   let iconDescription = response.data.condition.icon;
   let topIcon = document.querySelector("#mainIcon");
-  if (iconDescription == "clear-sky-day") {
-    topIcon.setAttribute(
-      "src",
-      "https://img.icons8.com/dusk/64/null/sun--v1.png"
-    );
-  }
-  if (iconDescription == "clear-sky-night") {
-    topIcon.setAttribute(
-      "src",
-      "https://img.icons8.com/dusk/64/null/bright-moon.png"
-    );
-  }
-  if (iconDescription == "few-clouds-day") {
-    topIcon.setAttribute(
-      "src",
-      "https://img.icons8.com/dusk/64/null/partly-cloudy-day--v1.png"
-    );
-  }
-  if (iconDescription == "few-clouds-night") {
-    topIcon.setAttribute(
-      "src",
-      "https://img.icons8.com/dusk/64/null/partly-cloudy-night--v1.png"
-    );
-  }
-  if (iconDescription == "scattered-clouds-day") {
-    topIcon.setAttribute(
-      "src",
-      "https://img.icons8.com/dusk/64/null/cloud.png"
-    );
-  }
-  if (iconDescription == "scattered-clouds-night") {
-    topIcon.setAttribute(
-      "src",
-      "https://img.icons8.com/dusk/64/null/cloud.png"
-    );
-  }
-  if (iconDescription == "broken-clouds-day") {
-    topIcon.setAttribute(
-      "src",
-      "https://img.icons8.com/dusk/64/null/skydrive.png"
-    );
-  }
-
-  if (iconDescription == "broken-clouds-night") {
-    topIcon.setAttribute(
-      "src",
-      "https://img.icons8.com/dusk/64/null/skydrive.png"
-    );
-  }
-  if (iconDescription == "shower-rain-day") {
-    topIcon.setAttribute(
-      "src",
-      "https://img.icons8.com/dusk/64/null/rain--v1.png"
-    );
-  }
-  if (iconDescription == "shower-rain-night") {
-    topIcon.setAttribute(
-      "src",
-      "https://img.icons8.com/dusk/64/null/keep-dry.png"
-    );
-  }
-  if (iconDescription == "rain-day") {
-    topIcon.setAttribute(
-      "src",
-      "https://img.icons8.com/dusk/64/null/rain--v1.png"
-    );
-  }
-  if (iconDescription == "rain-night") {
-    topIcon.setAttribute(
-      "src",
-      "https://img.icons8.com/dusk/64/null/rainy-night.png"
-    );
-  }
-  if (iconDescription == "thunderstorm-day") {
-    topIcon.setAttribute(
-      "src",
-      "https://img.icons8.com/dusk/64/null/storm--v1.png"
-    );
-  }
-  if (iconDescription == "thunderstorm-night") {
-    topIcon.setAttribute(
-      "src",
-      "https://img.icons8.com/dusk/64/null/storm--v1.png"
-    );
-  }
-  if (iconDescription == "snow-day") {
-    topIcon.setAttribute(
-      "src",
-      "https://img.icons8.com/dusk/64/null/snow-storm.png"
-    );
-  }
-  if (iconDescription == "snow-night") {
-    topIcon.setAttribute(
-      "src",
-      "https://img.icons8.com/dusk/64/null/snow-storm.png"
-    );
-  }
-  if (iconDescription == "mist-day") {
-    topIcon.setAttribute("src", "https://img.icons8.com/dusk/64/null/wind.png");
-  }
-  if (iconDescription == "mist-day") {
-    topIcon.setAttribute("src", "https://img.icons8.com/dusk/64/null/wind.png");
-  }
+  topIcon.setAttribute("src", `${icons(iconDescription)}`);
 }
 function convertFahrenheit(event) {
   event.preventDefault();
@@ -187,34 +136,56 @@ topFahrenheit.addEventListener("click", convertFahrenheit);
 
 let celsiusUnit = document.querySelector("#celsius");
 celsiusUnit.addEventListener("click", convertCelsius);
-
+function forecastDate(timestamp) {
+  let date = new Date(timestamp * 1000);
+  let day = date.getDay();
+  let days = ["Sun", "Mon", "Tue", "Wed", "Thu", "Fri", "Sat"];
+  return days[day];
+}
 function displayForecast(response) {
-  console.log(response.data.daily);
+  let nextForecast = response.data.daily;
   let forecastElement = document.querySelector("#forecast");
-  let days = ["Fri", "Sat", "Sun", "Mon", "Tue"];
+
+  console.log(response.data.daily);
 
   let forecastHTML = `<div class="row">`;
-  days.forEach(function (day) {
-    forecastHTML =
-      forecastHTML +
-      `
-      <div class="col-2">
-        <div class="weather-forecast-date">${day}</div>
+  nextForecast.forEach(function (forecastDay, index) {
+    let forecastDescription = forecastDay.condition.icon;
+    console.log(forecastDescription);
+    if (index < 5) {
+      forecastHTML =
+        forecastHTML +
+        `
+      <div class="col-2 details">
+        <div class="weather-forecast-date">${forecastDate(
+          forecastDay.time
+        )}</div>
         <img
-          src="https://img.icons8.com/dusk/64/null/windsock.png"
+          src=${icons(forecastDescription)}
           alt=""
           width="42"
+          id="forecast-icon"
         />
         <div class="weather-forecast-temperatures">
-          <span class="weather-forecast-temperature-max"> 18° </span>
-          <span class="weather-forecast-temperature-min"> 12° </span>
+          <span class="weather-forecast-temperature-max"> ${Math.round(
+            forecastDay.temperature.maximum
+          )}° </span>
+          <span class="weather-forecast-temperature-min"> ${Math.round(
+            forecastDay.temperature.minimum
+          )}° </span>
         </div>
       </div>
   `;
+    }
   });
 
   forecastHTML = forecastHTML + `</div>`;
   forecastElement.innerHTML = forecastHTML;
 }
-
+function getForecast(city) {
+  let apiKey = "aa4a09ddd8573d457f45bcat04cfo0ab";
+  let apiUrl = `https://api.shecodes.io/weather/v1/forecast?query=${city}&key=${apiKey}&units=metric`;
+  axios.get(apiUrl).then(displayForecast);
+}
 search("London");
+getForecast("London");
