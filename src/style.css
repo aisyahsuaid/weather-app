@@ -1,3 +1,9 @@
+body {
+  background: radial-gradient(ellipse at top, #f4d6de, transparent),
+    radial-gradient(ellipse at bottom, #9198e5, transparent);
+  text-align: center;
+}
+
 h1 {
   text-align: center;
 
@@ -11,6 +17,7 @@ ul {
   text-align: center;
   padding: 0;
 }
+
 .top {
   padding: 0;
   margin-top: 16px;
@@ -34,7 +41,6 @@ ul {
   bottom: 30px;*/
 }
 .weather-whole-border {
-  border: 2px solid black;
   max-width: 700px;
   margin: 50px auto;
 }
@@ -74,9 +80,33 @@ ul {
   margin: 50px auto;
 }
 .details {
-  border: 2px solid black;
+  border: 2px solid #f4d6de;
   margin: 10px;
   padding: 2px;
+  box-shadow: inset -5px -17px 24px rgba(0, 0, 0, 0.1);
+  background: #f4d6de;
+  font-size: 25px;
+  border-radius: 20px;
+  font-family: "Quiny", sans-serif;
+}
+.plug {
+  font-family: "Quiny", sans-serif;
+  display: block;
+  text-align: center;
+  font-size: 15px;
+}
+.link {
+  text-decoration: none;
+}
+form {
+  display: inline-block;
+  margin-left: auto;
+  margin-right: auto;
+  text-align: left;
+}
+div.form {
+  display: block;
+  text-align: center;
 }
 #date {
   right: 30px;
@@ -109,4 +139,12 @@ ul {
 }
 #fahrenheit {
   text-decoration: none;
+}
+#button {
+  background: #9198e5;
+  border: none;
+  border-radius: 3px;
+  font-family: "Quiny", sans-serif;
+  font-size: 25px;
+  padding: 1px 30px;
 }
